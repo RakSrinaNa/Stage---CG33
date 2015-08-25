@@ -1,0 +1,200 @@
+html, body {
+    height: 100%;
+    background-color: #dddddd;
+}
+
+#map {
+    width: auto !important;
+}
+
+.esriPopup .titlePane, .esriPopup .contentPane, .esriPopup .actionsPane,
+.esriPopup .pointer, .esriPopup .outerPointer, .esriPopup .pointer.top, .esriPopup .pointer.topLeft,
+.esriPopup .pointer.topRight, .esriPopup .pointer.bottomLeft, .esriPopup .pointe,
+.esriPopup .titlePane, .esriPopup.light .titlePane, .esriPopup.dark .titlePane {
+    background-color: #000000;
+}
+
+.esriPopup .contentPane {
+    color: #ffffff !important;
+}
+
+.esriBasemapGalleryThumbnail {
+    height: 48px;
+    width: 50px;
+    text-align: center;
+    margin: 0 1px 0 1px;
+}
+
+.esriBasemapGalleryNode {
+    width: inherit;
+    margin: 2px;
+}
+
+.boite {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #dddddd;
+    float: right;
+    border-radius: 20px;
+    border: solid coral;
+    height: 100%;
+    width: 20%;
+    text-align: center;
+}
+
+.boite-head {
+    background-color: cornflowerblue;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+    margin-bottom: 5px;
+}
+
+.boite-footer {
+    vertical-align: bottom;
+    margin: 5px;
+}
+
+.boite-title {
+    text-align: center;
+    margin: 12px;
+    font-family: "Comic Sans MS", Arial, sans-serif;
+    width: inherit;
+}
+
+.boite-body {
+    margin: 5px;
+}
+
+.boite-group {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 7px;
+}
+
+.boite-group-text {
+    float: left;
+    text-align: left;
+    font-family: "Comic Sans MS", Arial, sans-serif;
+    font-size: 0.90em;
+    margin-bottom: 2px;
+}
+
+.box {
+    width: inherit;
+    border-radius: 7px;
+    border: solid lightsteelblue;
+}
+
+.but {
+    margin-bottom: 5px;
+    width: inherit;
+    border-radius: 5px;
+    height: 4vh;
+    background-color: lightskyblue;
+    border-style: groove;
+}
+
+.but-valid {
+    background-color: lawngreen;
+}
+
+.but-warning{
+    background-color: #ffc43b;
+}
+
+.boite-info {
+    font-family: "Comic Sans MS", Arial, sans-serif;
+    font-size: 0.90em;
+    width: initial;
+    word-wrap: break-word;
+    margin: 5px;
+    text-align: center;
+}
+
+.boite-selection {
+    width: 100%;
+    border-radius: 7px;
+    border: solid lightsteelblue;
+}
+
+.esriSignInDialog{
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border: 1px solid rgb(117, 157, 192);
+    box-shadow: rgba(0, 0, 0, 0.247059) 0 1px 5px 0;
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    display: block;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: 309px;
+    left: 278px;
+    line-height: 20px;
+    opacity: 1;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: absolute;
+    top: 170px;
+    width: 252px;
+    z-index: 950;
+}
+
+input[type=date] {
+    line-height: 1em;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #3071a9;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #367ebd;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #3071a9;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #2a6495;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #3071a9;
+}
+input[type=range]::-ms-fill-upper {
+    background: #3071a9;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #367ebd;
+}

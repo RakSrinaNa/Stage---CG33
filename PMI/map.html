@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+
+    <title>Ajout d'un dossier PMI</title>
+
+    <link rel="stylesheet" href="//js.arcgis.com/3.10/js/esri/css/esri.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//esri.github.io/bootstrap-map-js/src/css/bootstrapmap.css">
+    <link rel="stylesheet" href="//js.arcgis.com/3.13/dijit/themes/claro/claro.css"/>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="//js.arcgis.com/3.13"></script>
+    <script src="map.js"></script>
+</head>
+<body>
+<div class="boite">
+    <div class="boite-head">
+        <h3 class="boite-title">Placement point</h3>
+    </div>
+    <div class="boite-body">
+        <div class="boite-group">
+            <label class="boite-group-text" for="dos">Num&eacute;ro de dossier:</label>
+            <br/><input class="box" type="text" id="dos">
+        </div>
+        <div class="boite-group">
+            <label for="adr" class="boite-group-text">Adresse:</label>
+            <br/><input class="box" type="text" id="adr">
+        </div>
+        <div class="boite-group">
+            <button class="but" id="add">Rechercher l'adresse</button>
+            <br/>
+            <button class="but but-valid" id="val">Valider le point</button>
+        </div>
+        <div class="boite-group">
+            <p class="boite-info" id="info"></p>
+        </div>
+    </div>
+    <div class="boite-footer">
+        <div class="boite-group">
+            <div class="boite-group-text">Fonds de carte:</div>
+            <br/>
+
+            <div id="basemapGallery"></div>
+        </div>
+        <div class="boite-group">
+            <button class="but but-warning" id="logout">D&eacute;connexion</button>
+        </div>
+    </div>
+        </div>
+<div class="claro" id="map"></div>
+</body>
+</html>

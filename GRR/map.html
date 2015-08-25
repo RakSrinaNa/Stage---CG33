@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+
+    <title>GRR (en mieux)</title>
+
+    <link rel="stylesheet" href="//js.arcgis.com/3.10/js/esri/css/esri.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//esri.github.io/bootstrap-map-js/src/css/bootstrapmap.css">
+    <link rel="stylesheet" href="//js.arcgis.com/3.13/dijit/themes/claro/claro.css"/>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="//js.arcgis.com/3.13"></script>
+    <script src="map.js"></script>
+</head>
+<body>
+<div class="boite">
+    <div class="boite-body">
+        <div class="boite-group">
+            <div id="searchMap"></div>
+        </div>
+        <div class="boite-group">
+            <label class="boite-group-text" for="searchName">Nom de salle:</label>
+            <br/>
+            <select id="searchName">
+            </select>
+        </div>
+        <div class="boite-group">
+            <label class="boite-group-text" for="startDate">Date de d&eacute;but:</label>
+            <input id="startDate" type="range" min="0" max="31" value="0" step="1" onchange="showValue1(this.value)" /><span id="range1">Ajourd'hui</span>
+            <script type="text/javascript">
+                function showValue1(newValue)
+                {
+                    if(document.getElementById("endDate").value < newValue)
+                    {
+                        document.getElementById("endDate").value = newValue;
+                    }
+                    var d = new Date();
+                    var md = new Date(d.getYear(), d.getMonth() + 1, 0).getDate();
+                    var nd = d.getDate() + parseInt(newValue);
+                    var nm = d.getMonth() + (nd / md);
+                    d.setDate(nd % md);
+                    d.setMonth(nm % 12);
+                    d.setYear(d.getFullYear() + (nm / 12));
+                    document.getElementById("range1").innerHTML = d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
+                }
+            </script>
+        </div>
+        <div class="boite-group">
+            <label class="boite-group-text" for="endDate">Date de fin:</label>
+            <input id="endDate" type="range" min="0" max="31" value="0" step="1" onchange="showValue2(this.value)" /><span id="range2">Aujourd'hui</span>
+            <script type="text/javascript">
+                function showValue2(newValue)
+                {
+                    var d = new Date();
+                    var md = new Date(d.getYear(), d.getMonth() + 1, 0).getDate();
+                    var nd = d.getDate() + parseInt(newValue);
+                    var nm = d.getMonth() + (nd / md);
+                    d.setDate(nd % md);
+                    d.setMonth(nm % 12);
+                    d.setYear(d.getFullYear() + (nm / 12));
+                    document.getElementById("range2").innerHTML = d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
+                }
+            </script>
+        </div>
+        <div class="boite-group">
+            <label class="boite-group-text" for="startTime">Heure de d&eacute;but:</label>
+            <input id="startTime" type="range" min="0" max="24" value="0" step="1" onchange="showValue3(this.value)" /><span id="range3">0h</span>
+            <script type="text/javascript">
+                function showValue3(newValue)
+                {
+                    document.getElementById("range3").innerHTML = newValue + 'h';
+                }
+            </script>
+        </div>
+        <div class="boite-group">
+            <label class="boite-group-text" for="endTime">Heure de fin:</label>
+            <input id="endTime" type="range" min="0" max="24" value="0" step="1" onchange="showValue4(this.value)" /><span id="range4">0h</span>
+            <script type="text/javascript">
+                function showValue4(newValue)
+                {
+                    document.getElementById("range4").innerHTML = newValue + 'h';
+                }
+            </script>
+        </div>
+        <div class="boite-group">
+            <button class="but but-valid" id="search">Appliquer la p&eacute;riode</button>
+        </div>
+        <div class="boite-group">
+            <button class="but but-warning" id="clear">Effacer itin&eacute;raire et arr&ecirc;ets</button>
+        </div>
+        <div class="boite-group">
+            <p class="boite-info" id="info"></p>
+        </div>
+    </div>
+    <div class="boite-footer">
+        <div class="boite-group">
+            <div class="boite-group-text">Fonds de carte:</div>
+            <br/>
+
+            <div id="basemapGallery"></div>
+        </div>
+        <div class="boite-group">
+            <button class="but but-warning" id="logout">D&eacute;connexion</button>
+        </div>
+    </div>
+        </div>
+<div class="claro" id="map"></div>
+</body>
+</html>
