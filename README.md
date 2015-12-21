@@ -1,4 +1,4 @@
-# Stage---CG37
+# Stage - CG37
 Code réalisé pour mon stage à la DSI en 2015
 
 ## Dossiers
