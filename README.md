@@ -1,5 +1,5 @@
 # Stage - CG37
-Code réalisé pour mon stage à la DSI en 2015
+Code realized for my internship at the DSI of the Conseil Départemental 37 in 2015
 
 ## Dossiers
 ADTT: Script to fetch data on the 'Departement' to place them on a map  
